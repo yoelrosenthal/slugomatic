@@ -1,0 +1,23 @@
+[package]
+name = "slugomatic"
+version = "0.1.0"
+edition = "2021"
+description = "🐌 A simple CLI tool to slugify and unslugify text, perfect for branch names and URLs"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/yoelrosenthal/slugomatic"
+homepage = "https://github.com/yoelrosenthal/slugomatic"
+documentation = "https://docs.rs/slugomatic"
+readme = "README.md"
+keywords = ["slugify", "cli", "text", "branch", "url", "unslugify"]
+categories = ["command-line-utilities", "text-processing"]
+authors = ["Yoel Rosenthal <yoel.rosenthal@gmail.com>"]
+authors = ["Yoel Rosenthal <yoel@ByteMagic.xyz>"]
+
+[dependencies]
+clap = { version = "4.5", features = ["derive"] }
+regex = "1.11"
+arboard = "3.5.0"
+
+[[bin]]
+name = "slug"
+path = "src/main.rs"
