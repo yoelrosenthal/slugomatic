@@ -8,7 +8,7 @@ repository = "https://github.com/yoelrosenthal/slugomatic"
 homepage = "https://github.com/yoelrosenthal/slugomatic"
 documentation = "https://docs.rs/slugomatic"
 readme = "README.md"
-keywords = ["slugify", "cli", "text", "branch", "url", "unslugify"]
+keywords = ["slugify", "cli", "text", "branch", "git"]
 categories = ["command-line-utilities", "text-processing"]
 authors = ["Yoel Rosenthal <yoel@ByteMagic.xyz>"]
 
