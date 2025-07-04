@@ -1,5 +1,7 @@
 # 🐌 Slugomatic
 
+[![Crates.io](https://img.shields.io/crates/v/slugomatic.svg)](https://crates.io/crates/slugomatic)
+
 A simple and fast CLI tool to slugify and unslugify text, perfect for creating branch names, URLs, and file names.
 
 ## Features
