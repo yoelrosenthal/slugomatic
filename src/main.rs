@@ -1,5 +1,5 @@
 use arboard::Clipboard;
-use clap::{ArgGroup, Parser};
+use clap::Parser;
 use regex::Regex;
 use std::io::{self, Read};
 use std::process;
@@ -18,12 +18,7 @@ use std::process;
               Examples:\n  slug \"Hello World\"\n  slug -u \"my-feature-branch\"\n  echo \"from stdin\" | slug --no-clipboard",
     after_help = "If no TEXT is given, reads from stdin.\n\
                   By default, slugified/unslugified result is copied to clipboard unless --no-clipboard is set.",
-    next_line_help = true,
-    group(
-        ArgGroup::new("mode")
-            .args(["slug", "unslug"])
-            .multiple(false)
-    )
+    next_line_help = true
 )]
 struct Args {
     /// Slugify the input (default)

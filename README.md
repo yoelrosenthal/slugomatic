@@ -76,8 +76,16 @@ slug -u "fix-user-authentication-bug"
 slug "Add new feature (v2.0)!"
 # Output: add-new-feature-v20
 
-# Use in pipelines
-git branch | slug
+### Slugify via stdin
+
+# These both work the same:
+slug "A new feature branch"
+echo "A new feature branch" | slug
+
+### Prevent copying to clipboard
+
+slug "Text" --no-clipboard
+echo "Another example" | slug --no-clipboard
 ```
 
 ## Options

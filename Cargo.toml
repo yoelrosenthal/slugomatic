@@ -10,7 +10,6 @@ documentation = "https://docs.rs/slugomatic"
 readme = "README.md"
 keywords = ["slugify", "cli", "text", "branch", "url", "unslugify"]
 categories = ["command-line-utilities", "text-processing"]
-authors = ["Yoel Rosenthal <yoel.rosenthal@gmail.com>"]
 authors = ["Yoel Rosenthal <yoel@ByteMagic.xyz>"]
 
 [dependencies]
