@@ -107,7 +107,6 @@ slug -u "fix-user-authentication-bug" --title
 # Works with special characters
 slug "Add new feature (v2.0)!"
 # Output: Add-new-feature-v20
-```
 
 ### Slugify via stdin
 
