@@ -91,7 +91,6 @@ fn main() {
 fn slugify(input: &str) -> String {
     let re = Regex::new(r"[^\w\s-]").unwrap();
     re.replace_all(input, "")
-        .to_lowercase()
         .split_whitespace()
         .collect::<Vec<&str>>()
         .join("-")
