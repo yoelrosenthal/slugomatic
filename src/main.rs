@@ -102,7 +102,6 @@ fn main() {
     }
 
     fn title_case(input: &str) -> String {
-        // Only split by whitespace, not by hyphens
         input
             .split_whitespace()
             .map(|word| {
