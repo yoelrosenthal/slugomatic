@@ -1,9 +1,8 @@
 # Changelog
 ## [v0.2.2] - 2025-07-07
 
-### 🐞 Bug Fixes
-- Fixed `--title` so that title case is applied before slugification for slugs
-
+### 🐞 Bug Fix
+- Fixed `--title` so that title case is applied before slugification
 ## [v0.2.1] - 2025-07-07
 
 ### 📝 Documentation
