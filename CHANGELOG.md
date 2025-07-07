@@ -1,8 +1,6 @@
-slugomatic/CHANGELOG.md
-```
 # Changelog
 
-## [v0.2.0] - 2024-06-05
+## [v0.2.0] - 2025-07-07
 
 ### ⚠️ Breaking Change
 - **Default Case Preservation:**  
