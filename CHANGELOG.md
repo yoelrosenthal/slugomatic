@@ -1,6 +1,13 @@
 # Changelog
 
+
+## [v0.2.1] - 2025-07-08
+
+### 📝 Documentation
+- Small formatting changes in documentation and examples for improved clarity.
+
 ## [v0.2.0] - 2025-07-07
+
 
 ### ⚠️ Breaking Change
 - **Default Case Preservation:**  
