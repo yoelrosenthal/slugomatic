@@ -1,6 +1,6 @@
 [package]
 name = "slugomatic"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2021"
 description = "🐌 A simple CLI tool to slugify and unslugify text, perfect for branch names and URLs"
 license = "MIT OR Apache-2.0"
