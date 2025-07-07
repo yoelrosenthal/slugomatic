@@ -11,6 +11,7 @@ A simple and fast CLI tool to slugify and unslugify text, perfect for creating b
 - **Clipboard integration**: Automatically copies results to clipboard
 - **Fast and lightweight**: Built with Rust for maximum performance
 - **Cross-platform**: Works on Windows, macOS, and Linux
+- **Case conversion**: Output can be converted to all lowercase, all uppercase, or title case using `--lowercase`, `--uppercase`, or `--title`
 
 ## Installation
 
@@ -35,11 +36,14 @@ cargo install --path .
 ```bash
 # Convert text to slug
 slug "Hello World"
-# Output: hello-world
+# Output: Hello-World
 
 # You may also echo text and pipe it (works if TEXT is omitted)
 echo "My Feature Branch" | slug
-# Output: my-feature-branch
+# Output: My-Feature-Branch
+
+# Most git branch names should be lowercase; see --lowercase below!
+# For human-readable output you can use --title!
 ```
 
 ### Unslugify text
@@ -63,20 +67,47 @@ echo "fix-user-authentication-bug" | slug -u
 slug --no-clipboard "Just show this"
 ```
 
+### Case conversion
+
+```bash
+# Default: preserves input capitalization
+slug "Some Mixed Case Words"
+# Output: Some-Mixed-Case-Words
+
+# Force output to lowercase
+slug "Some Text Here" --lowercase
+# Output: some-text-here
+
+slug -u "My-Feature-Branch" --lowercase
+# Output: my feature branch
+
+# Force output to uppercase
+slug "Some Text Here" --uppercase
+# Output: SOME-TEXT-HERE
+
+slug -u "my-feature-branch" --uppercase
+# Output: MY FEATURE BRANCH
+
+# Title Case output:
+slug "some mixed cAsE Words" --title
+# Output: Some Mixed Case Words
+```
+
 ### Examples
 
 ```bash
-# Perfect for Git branch names
-slug "Fix user authentication bug"
+# Perfect for Git branch names (commonly lowercase):
+slug "Fix user authentication bug" --lowercase
 # Output: fix-user-authentication-bug
 
-# Convert back to readable text
-slug -u "fix-user-authentication-bug"
-# Output: fix user authentication bug
+# Title case for readability
+slug -u "fix-user-authentication-bug" --title
+# Output: Fix User Authentication Bug
 
 # Works with special characters
 slug "Add new feature (v2.0)!"
-# Output: add-new-feature-v20
+# Output: Add-new-feature-v20
+```
 
 ### Slugify via stdin
 
@@ -96,6 +127,9 @@ echo "Another example" | slug --no-clipboard
 - `-u, --unslug`: Unslugify the input (convert dashes to spaces)
 - `--no-clipboard`: Do not copy the result to the clipboard (default is to copy)
 - `TEXT`: The text to process; if omitted, reads from stdin
+- `--lowercase`: Convert the result to all lowercase (mutually exclusive with `--uppercase` and `--title`)
+- `--uppercase`: Convert the result to all uppercase (mutually exclusive with `--lowercase` and `--title`)
+- `--title`: Convert the result to title case (each word starts uppercase, mutually exclusive with `--lowercase` and `--uppercase`)
 - `-h, --help`: Show detailed help information, usage, and examples
 - `-V, --version`: Show version information
 
@@ -103,13 +137,14 @@ echo "Another example" | slug --no-clipboard
 
 - **Text argument vs stdin**: If you provide a `TEXT`, that is processed. If `TEXT` is omitted, input will be read from standard input (stdin).
 - **Clipboard**: Results are copied to clipboard by default if available; use `--no-clipboard` to control this.
+- **Case conversion**: By default, slug output preserves case. Use `--lowercase`, `--uppercase`, or `--title` to convert. These options cannot be combined.
 - **Help**: Try `slug --help` for full usage details, including all options and examples.
 
 ## How it works
 
-- **Slugify**: Removes special characters, converts to lowercase, and replaces spaces with hyphens
-- **Unslugify**: Simply replaces hyphens with spaces
-- **Clipboard**: Results are automatically copied to your clipboard for easy pasting (unless disabled)
+- **Slugify**: Removes special characters and replaces spaces with hyphens. Output case is preserved unless `--lowercase`, `--uppercase`, or `--title` is used.
+- **Unslugify**: Turns hyphens into spaces. Use `--lowercase`, `--uppercase`, or `--title` to standardize output if desired.
+- **Clipboard**: Results are automatically copied to your clipboard (unless disabled)
 
 ## License
 
