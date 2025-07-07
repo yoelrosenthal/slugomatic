@@ -89,6 +89,8 @@ fn main() {
 
     let mut result = if args.unslug {
         unslugify(&input)
+    } else if args.title {
+        slugify(&title_case(&input))
     } else {
         slugify(&input)
     };
@@ -97,11 +99,10 @@ fn main() {
         result = result.to_lowercase();
     } else if args.uppercase {
         result = result.to_uppercase();
-    } else if args.title {
-        result = title_case(&result);
     }
 
     fn title_case(input: &str) -> String {
+        // Only split by whitespace, not by hyphens
         input
             .split_whitespace()
             .map(|word| {
