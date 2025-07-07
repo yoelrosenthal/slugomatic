@@ -1,7 +1,7 @@
 # Changelog
 
 
-## [v0.2.1] - 2025-07-08
+## [v0.2.1] - 2025-07-07
 
 ### 📝 Documentation
 - Small formatting changes in documentation and examples for improved clarity.
